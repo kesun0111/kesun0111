@@ -28,3 +28,28 @@ export interface QwenOcrResponse {
     }>;
   };
 }
+// ... existing code ...
+
+export interface ExamQuestion {
+  question_id: string;
+  question_frame: number[];
+  question_content: string;
+  question_graph: string | number[];
+  answer_options: ExamOption[];
+}
+
+export interface ExamOption {
+  option_id: string;
+  option_content: string;
+  option_graph: string | number[];
+}
+
+export interface ExamData {
+  exam_title: string;
+  total_question_number: number;
+  question_list: ExamQuestion[];
+}
+
+export interface ExamResponse {
+  examData: ExamData;
+}
